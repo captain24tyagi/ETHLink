@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Feed from './components/Feed';
 import Bio from './components/Bio';
 import Signin from './components/Signin';
+import Jobs from './components/Jobs';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route exact path='/feed' element={<Feed/>} />
           <Route exact path='/profile' element={<Bio/>} />
           <Route exact path='/signin' element={<Signin/>} />
+          <Route exact path='/jobs' element={<Jobs/>} />
         </Routes>
       </Router>
     </div>

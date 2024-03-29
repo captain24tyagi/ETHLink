@@ -126,14 +126,8 @@ export default function Bio() {
           <div className='my-5 bg-black p-5 rounded-xl'>
             <h1 className='text-center mb-5 text-xl text-[#F18404]'>CONTACT</h1>
             <div className='space-x-3'>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <EmailRoundedIcon Mail className='mx-1 text-white' />
-                EMAIL
-              </button>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <ChatRoundedIcon className='mx-1 text-white' />
-                MESSAGE
-              </button>
+              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><EmailRoundedIcon Mail className='mx-1 text-white'/>EMAIL</button>
+              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><ChatRoundedIcon className='mx-1 text-white'/>MESSAGE</button>
             </div>
           </div>
         </div>
