@@ -6,9 +6,9 @@ import Post from './Post';
 
 export default function Feed() {
   return (
-    <div className='bg-black w-full h-[100%]'>
+    <div className='bg-black w-full min-h-screen'>
      <Header/>
-     <div className='grid grid-cols-4 h-[1200px] mb-5 text-white m-5'>
+     <div className='grid grid-cols-4 min-h-screen mb-5 text-white m-5'>
 
        <div className='px-3 rounded-xl h-fit bg-[#4D4C5D] col-span-1'>
         <div className='p-3 mb-3 text-center border-solid border-b-2 border-white'>

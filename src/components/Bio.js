@@ -20,15 +20,15 @@ export default function Bio() {
               <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><LinkIcon className='mx-1 text-white'/>CONNECT</button>
             </div>
             <div className='flex flex-col mx-5 my-3'>
-              <h3 className='text-xl text-[#F18404]'>CONNECTIONS: <span className='text-white'>500+</span></h3>
-              <h3 className='text-xl text-[#F18404]'>FOLLOWERS: <span className='text-white'>612</span></h3>
+              <h3 className='text-xl text-[#F18404]'>CONNECTIONS: <span className='hover:text-[#F18404]  text-white'>500+</span></h3>
+              <h3 className='text-xl text-[#F18404]'>FOLLOWERS: <span className='hover:text-[#F18404]  text-white'>612</span></h3>
             </div>
           </div>
           <div className='my-5 bg-black p-5 rounded-xl'>
             <h1 className='text-center mb-5 text-xl text-[#F18404]'>CONTACT</h1>
             <div className='space-x-3'>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><EmailRoundedIcon Mail className='mx-1 text-white'/>EMAIL</button>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><ChatRoundedIcon className='mx-1 text-white'/>MESSAGE</button>
+              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><EmailRoundedIcon Mail className='hover:text-[#F18404]  mx-1 text-white'/>EMAIL</button>
+              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'><ChatRoundedIcon className='hover:text-[#F18404]  mx-1 text-white'/>MESSAGE</button>
             </div>
           </div>
          </div>

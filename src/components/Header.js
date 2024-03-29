@@ -4,6 +4,7 @@ import Person2Icon from '@mui/icons-material/Person2';
 import ChatIcon from '@mui/icons-material/Chat';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import SearchIcon from '@mui/icons-material/Search';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -20,7 +21,8 @@ export default function Header() {
            <Link to="/feed"><button><HomeIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
            <Link to="/profile"><button><Person2Icon className='mx-5 hover:text-[#F18404]'/></button></Link>
            <Link to=""><button><ChatIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
-           <Link to=""><button><BusinessCenterIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
+           <Link to="/jobs"><button><BusinessCenterIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
+           <Link to=""><button><NotificationsIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
           </div>
         </div>
   )
