@@ -16,69 +16,82 @@ import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 
-
 export default function Bio() {
-  const [open, setOpen] = useState(false);
-  const [educationDetails, setEducationDetails] = useState([]);
+  const [open, setOpen] = useState(false)
+  const [educationDetails, setEducationDetails] = useState([])
   const [formData, setFormData] = useState({
-    name: '',
     institution: '',
     degree: '',
-    location: '',
+    branch: '',
+    city: '',
+    country: '',
     startDate: '',
     endDate: '',
-    proof: null
-  });
+    proof: null,
+  })
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value })
+  }
 
   const handleProofChange = (event) => {
-    setFormData({ ...formData, proof: event.target.files[0] });
-  };
+    setFormData({ ...formData, proof: event.target.files[0] })
+  }
 
   const handleSubmit = () => {
+    const {
+      institution,
+      degree,
+      branch,
+      city,
+      country,
+      startDate,
+      endDate,
+      proof,
+    } = formData
+
     if (
-      formData.name.trim() !== '' &&
-      formData.institution.trim() !== '' &&
-      formData.degree.trim() !== '' &&
-      formData.location.trim() !== '' &&
-      formData.startDate.trim() !== '' &&
-      formData.endDate.trim() !== '' &&
-      formData.proof
+      institution.trim() !== '' &&
+      degree.trim() !== '' &&
+      branch.trim() !== '' &&
+      city.trim() !== '' &&
+      country.trim() !== '' &&
+      startDate.trim() !== '' &&
+      endDate.trim() !== '' &&
+      proof
     ) {
-      const newDetails = [...educationDetails, formData];
-      setEducationDetails(newDetails);
+      const newDetails = [...educationDetails, formData]
+      setEducationDetails(newDetails)
       setFormData({
-        name: '',
         institution: '',
         degree: '',
-        location: '',
+        branch: '',
+        city: '',
+        country: '',
         startDate: '',
         endDate: '',
-        proof: null
-      });
-      handleClose();
+        proof: null,
+      })
+      handleClose()
     } else {
-      alert('All fields are required!');
+      alert('All fields are required!')
     }
-  };
+  }
 
   const handleDelete = (index) => {
-    const updatedDetails = [...educationDetails];
-    updatedDetails.splice(index, 1);
-    setEducationDetails(updatedDetails);
-  };
+    const updatedDetails = [...educationDetails]
+    updatedDetails.splice(index, 1)
+    setEducationDetails(updatedDetails)
+  }
 
   return (
     <div>
@@ -144,124 +157,144 @@ export default function Bio() {
           </div>
 
           <div>
-      <div className='flex flex-col p-5 border-solid border-b-2 border-white'>
-        <div className='flex flex-row justify-between'>
-          <h2 className='text-2xl text-[#F18404]'>EDUCATION </h2>
-          <div>
-            <button
-              style={{
-                border: 'none',
-                background: 'none',
-                cursor: 'pointer',
-              }}
-              onClick={handleOpen}
-            >
-              {' '}
-              <AddIcon className='mx-5 my-2 text-[#F18404]' />{' '}
-            </button>
-          </div>
-        </div>
-        {educationDetails.map((education, index) => (
-          <div key={index} className='flex flex-row justify-between'>
-            <div className='flex flex-col w-[600px]'>
-              <h3 className='text-xl'>{education.degree}</h3>
-              <h4 className='text-md'>
-                {education.name}, {education.institution}, {education.location}
-              </h4>
-              <h5 className='text-md'>
-                {new Intl.DateTimeFormat('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: '2-digit'
-                }).format(new Date(education.startDate))}{' '}
-                -{' '}
-                {new Intl.DateTimeFormat('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: '2-digit'
-                }).format(new Date(education.endDate))}
-              </h5>
+            <div className='flex flex-col p-5 border-solid border-b-2 border-white'>
+              <div className='flex flex-row justify-between'>
+                <h2 className='text-2xl text-[#F18404]'>EDUCATION </h2>
+                <div>
+                  <button
+                    style={{
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                    }}
+                    onClick={handleOpen}
+                  >
+                    {' '}
+                    <AddIcon className='mx-5 my-2 text-[#F18404]' />{' '}
+                  </button>
+                </div>
+              </div>
+              {educationDetails.map((education, index) => (
+                <div key={index} className='flex flex-row mb-5 justify-between'>
+                  <div className='flex flex-col w-[600px] mx-5'>
+                    <h3 className='text-xl'>
+                      {education.degree} - {education.branch}
+                    </h3>
+                    <h4 className='text-md'>
+                      {education.institution}, {education.city},{' '}
+                      {education.country}
+                    </h4>
+                    <h5 className='text-md'>
+                      {new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit',
+                      }).format(new Date(education.startDate))}{' '}
+                      -{' '}
+                      {new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit',
+                      }).format(new Date(education.endDate))}
+                    </h5>
+                  </div>
+                  <IconButton
+                    aria-label='delete'
+                    onClick={() => handleDelete(index)}
+                    style={{ color: '#FFFFFF' }}
+                  >
+                    <DeleteIcon className='mx-3' />
+                  </IconButton>
+                </div>
+
+              ))}
             </div>
-            <IconButton aria-label='delete' onClick={() => handleDelete(index)}>
-              <DeleteIcon />
-            </IconButton>
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle>Add Details</DialogTitle>
+              <DialogContent>
+                <TextField
+                  margin='dense'
+                  label='Institution'
+                  fullWidth
+                  name='institution'
+                  value={formData.institution}
+                  onChange={handleInputChange}
+                  required
+                />
+
+                <TextField
+                  margin='dense'
+                  label='Degree'
+                  fullWidth
+                  name='degree'
+                  value={formData.degree}
+                  onChange={handleInputChange}
+                  required
+                />
+                <TextField
+                  autoFocus
+                  margin='dense'
+                  label='Branch'
+                  fullWidth
+                  name='branch'
+                  value={formData.branch}
+                  onChange={handleInputChange}
+                  required
+                />
+                <TextField
+                  margin='dense'
+                  label='City'
+                  name='city'
+                  value={formData.city}
+                  onChange={handleInputChange}
+                  required
+                />
+                <TextField
+                  margin='dense'
+                  label='Country'
+                  name='country'
+                  value={formData.country}
+                  onChange={handleInputChange}
+                  required
+                />
+                <TextField
+                  margin='dense'
+                  label='Start Date'
+                  fullWidth
+                  type='date'
+                  name='startDate'
+                  value={formData.startDate}
+                  onChange={handleInputChange}
+                  InputLabelProps={{ shrink: true }}
+                  required
+                />
+                <TextField
+                  margin='dense'
+                  label='End Date'
+                  fullWidth
+                  type='date'
+                  name='endDate'
+                  value={formData.endDate}
+                  onChange={handleInputChange}
+                  InputLabelProps={{ shrink: true }}
+                  required
+                />
+                <input type='file' onChange={handleProofChange} required />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color='primary'>
+                  Cancel
+                </Button>
+                <Button
+                  onClick={handleSubmit}
+                  color='primary'
+                  variant='contained'
+                >
+                  Submit
+                </Button>
+              </DialogActions>
+            </Dialog>
           </div>
-        ))}
-      </div>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add Details</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin='dense'
-            label='Name'
-            fullWidth
-            name='name'
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            margin='dense'
-            label='Institution'
-            fullWidth
-            name='institution'
-            value={formData.institution}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            margin='dense'
-            label='Degree'
-            fullWidth
-            name='degree'
-            value={formData.degree}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            margin='dense'
-            label='Location'
-            fullWidth
-            name='location'
-            value={formData.location}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            margin='dense'
-            label='Start Date'
-            fullWidth
-            type='date'
-            name='startDate'
-            value={formData.startDate}
-            onChange={handleInputChange}
-            InputLabelProps={{ shrink: true }}
-            required
-          />
-          <TextField
-            margin='dense'
-            label='End Date'
-            fullWidth
-            type='date'
-            name='endDate'
-            value={formData.endDate}
-            onChange={handleInputChange}
-            InputLabelProps={{ shrink: true }}
-            required
-          />
-          <input type='file' onChange={handleProofChange} required />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color='primary'>
-            Cancel
-          </Button>
-          <Button onClick={handleSubmit} color='primary' variant='contained'>
-            Submit
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
 
           <div className='flex flex-col p-5 h-fit'>
             <h2 className='text-2xl text-[#F18404]'>POSITION</h2>
