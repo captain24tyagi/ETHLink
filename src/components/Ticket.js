@@ -13,6 +13,8 @@ export default function Ticket(props) {
         </div>
         <div className='items-center'>
         <img className='h-[80px] w-[100px]' src='/images/cover-letter (1) 1.png' alt='' />
+        <button className='m-3 px-5 rounded-xl bg-green-400'>Accept</button>
+        <button className='m-3 px-5 rounded-xl bg-red-500'>Reject</button>
         </div>
         
     </div>

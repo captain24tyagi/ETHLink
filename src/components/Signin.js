@@ -4,9 +4,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Link } from 'react-router-dom';
+import { useAccount } from 'wagmi';
 
 export default function Signin() {
-
+  const isConnected  = useAccount();
   return (
     <div className='min-h-screen'>
      <div className='px-10 mx-10 py-5 items-center font-mono justify-between flex flex-row'>
