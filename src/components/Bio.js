@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Header from './Header'
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt'
-import LinkIcon from '@mui/icons-material/Link'
-import ChatRoundedIcon from '@mui/icons-material/ChatRounded'
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded'
 import Skills from './Skills'
 import AddIcon from '@mui/icons-material/Add'
 import Dialog from '@mui/material/Dialog'
@@ -16,6 +12,7 @@ import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import Experience from './Experience'
+import Socials from './Socials'
 
 export default function Bio() {
   // Education
@@ -164,39 +161,7 @@ export default function Bio() {
             src='/images/dp 5.png'
             alt=''
           />
-          <div className='my-5 bg-black rounded-xl p-5'>
-            <div className='flex flex-row space-x-3'>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <PersonAddAltIcon className='mx-1 text-white' />
-                FOLLOW
-              </button>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <LinkIcon className='mx-1 text-white' />
-                CONNECT
-              </button>
-            </div>
-            <div className='flex flex-col mx-5 my-3'>
-              <h3 className='text-xl text-[#F18404]'>
-                CONNECTIONS: <span className='text-white'>500+</span>
-              </h3>
-              <h3 className='text-xl text-[#F18404]'>
-                FOLLOWERS: <span className='text-white'>612</span>
-              </h3>
-            </div>
-          </div>
-          <div className='my-5 bg-black p-5 rounded-xl'>
-            <h1 className='text-center mb-5 text-xl text-[#F18404]'>CONTACT</h1>
-            <div className='space-x-3'>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <EmailRoundedIcon Mail className='mx-1 text-white' />
-                EMAIL
-              </button>
-              <button className='bg-[#98948B] px-3 py-1 rounded-2xl text-[#313131] font-semibold'>
-                <ChatRoundedIcon className='mx-1 text-white' />
-                MESSAGE
-              </button>
-            </div>
-          </div>
+          <Socials />
         </div>
 
         <div className='col-span-2 m-5 bg-black rounded-xl h-fit'>
@@ -457,8 +422,9 @@ export default function Bio() {
         </div>
       </div>
       {/* EXPERIENCE */}
-
-      <Experience />
+      <div className='min-h-screen'>
+        <Experience />
+      </div>
     </div>
   )
 }

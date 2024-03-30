@@ -53,7 +53,7 @@ export default function Experience() {
   }
 
   return (
-    <div className='rounded-lg mx-10 my-5 h-[800px] bg-[#4C4D5D] text-white'>
+    <div className='rounded-lg mx-10 my-5 min-h-fit bg-[#4C4D5D] text-white'>
       <div className='flex flex-row justify-between'>
         <h1 className='m-5 p-5 text-3xl text-[#F18404]'>EXPERIENCE</h1>
         <div className='flex items-center'>
