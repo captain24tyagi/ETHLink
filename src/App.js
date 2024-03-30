@@ -16,14 +16,11 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
-
 import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
-
 import { walletConnect } from 'wagmi/connectors';
-
 import CompNotifications from './components/CompNotifications';
 
 
