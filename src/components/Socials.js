@@ -11,13 +11,7 @@ function Socials() {
 
   const handleFollow = () => {
     setIsFollowed(true);
-    setTimeout(() => {
-      setIsFollowed(false);
-      const followButton = document.getElementById('follow-button');
-      if (followButton) {
-        followButton.style.display = 'none';
-      }
-    }, 1000); // 1000 milliseconds = 1 second
+    
   };
   const [status, setStatus] = useState('idle');
 
@@ -44,7 +38,7 @@ function Socials() {
   ) : (
     <PersonAddAltIcon className='mx-1 text-white' />
   )}
-  {isFollowed ? 'SENT' : 'FOLLOW'}
+  {isFollowed ? 'FOLLOWED' : 'FOLLOW'}
 </button>
       <button
         className={`px-3 py-1 rounded-2xl font-semibold ${
