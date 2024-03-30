@@ -21,7 +21,11 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+<<<<<<< HEAD
 import { walletConnect } from 'wagmi/connectors';
+=======
+import CompNotifications from './components/CompNotifications';
+>>>>>>> 0265422baf330956a09fffe5a537bddbbfe93e9e
 
 export const availSepolia = {
   id: 202402021700,
@@ -79,6 +83,7 @@ export default function App() {
           <Route exact path='/notifications' element={<Notifications/>} />
           <Route exact path='/company/tickets' element={<Tickets/>} />
           <Route exact path='/company/proposals' element={<Proposals/>} />
+          <Route exact path='/company/compNotifications' element={<CompNotifications/>} />
         </Routes>
       </Router>
     </div>

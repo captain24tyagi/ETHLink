@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from 'react'
-import VerifiedRoundedIcon from '@mui/icons-material/VerifiedRounded'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
@@ -11,6 +10,7 @@ import AddIcon from '@mui/icons-material/Add'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import 'react-datepicker/dist/react-datepicker.css'
+import PendingActionsTwoToneIcon from '@mui/icons-material/PendingActionsTwoTone'
 
 export default function Experience() {
   const [experienceDetails, setExperienceDetails] = useState([])
@@ -84,10 +84,10 @@ export default function Experience() {
               />
             )}
             <div className='flex flex-row justify-between'>
-              <div className='w-[1100px]'>
+              <div className='w-[1000px]'>
                 <h1 className='font-bold text-2xl'>
                   {experience.designation}
-                  <VerifiedRoundedIcon className='mx-2 mb-1 text-green-500' />
+                  <PendingActionsTwoToneIcon className='mx-2 mb-1 text-red-500' />
                 </h1>
                 <p className='text-xl'>{experience.companyName}</p>
                 <div className='py-5'>
@@ -96,6 +96,14 @@ export default function Experience() {
                   <p>{experience.location}</p>
                 </div>
               </div>
+              <div className='items-center'>
+                <img
+                  className='h-[50px] w-[50px] mx-10 my-10'
+                  src='/images/clock.png'
+                  alt=''
+                />
+              </div>
+
               <div>
                 <IconButton
                   aria-label='delete'

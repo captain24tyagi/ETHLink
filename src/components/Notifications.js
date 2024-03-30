@@ -11,11 +11,14 @@ export default function Notifications() {
 
         <div className='col-span-1 p-3 rounded-l-lg text-left border-solid border-r-2 border-white bg-[#4D4C5D]'>
         <div className='p-5 items-center'>
+          <div className='flex items-center justify-center mb-5'>
+
           <img
-            className='h-[200px] w-[200px] items-center rounded-full mx-10 m-5'
+            className='h-[200px] w-[200px] rounded-full m-5'
             src='/images/dp 5.png'
             alt=''
           />
+          </div>
           <div className='my-5 rounded-xl p-5 bg-black'>
             <div className='flex flex-row space-x-3'>
             <div className='m-5 flex flex-col'>
@@ -45,10 +48,11 @@ export default function Notifications() {
 
           <div>
             <h2 className='font-bold py-1 text-xl text-white text-left'>
-             Sarthak Tyagi posted:
+            <span className='text-[#F18404]'> Sarthak Tyagi posted: </span>
+             
             </h2>
             <p className='py-1 text-lg text-white text-left'>
-            Hacking at ETH Mumbai and booking Russian, let's connect
+            Hacking at ETH Mumbai , let's connect
             </p>
           </div>
           
@@ -64,10 +68,10 @@ export default function Notifications() {
 
           <div>
             <h2 className='font-bold py-1 text-xl text-white text-left'>
-             Sarthak Tyagi posted:
+            <span className='text-[#F18404]'> Devam Savla posted: </span>
             </h2>
             <p className='py-1 text-lg text-white text-left'>
-            Hacking at ETH Mumbai and booking Russian, let's connect
+            On the way  Mumbai for ETH Mumbai ! Let's Meet
             </p>
           </div>
           
