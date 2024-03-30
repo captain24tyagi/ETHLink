@@ -94,7 +94,7 @@ export default function Bio() {
       args: [
         '0x592fa743889fc12d14e24548b6a4471714f487080ebf56a5ec853646105ab4cf',
         'RachitDhaka',
-        'CoFounder',
+        'ContentWriter',
         5,
         '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
       ],

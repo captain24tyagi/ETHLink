@@ -10,18 +10,15 @@ import Notifications from './components/Notifications';
 import Tickets from './components/Tickets';
 import Proposals from './components/Proposals';
 import '@rainbow-me/rainbowkit/styles.css';
-import { http, createConfig } from '@wagmi/core';
-import { sepolia } from '@wagmi/core/chains';
-import {
-
-  RainbowKitProvider,
-} from '@rainbow-me/rainbowkit';
+import { http, createConfig } from 'wagmi';
+import { sepolia } from 'wagmi/chains';
+import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
+import { walletConnect } from 'wagmi/connectors';
 import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
-import { injected } from '@wagmi/connectors';
 import CompNotifications from './components/CompNotifications';
 
 
@@ -49,8 +46,7 @@ export const config = getDefaultConfig({
   projectId: 'b4c074b408e38eb0348c3810737f0ff4',
   chains: [sepolia],
 
-
-const queryClient = new QueryClient();
+})
 
 export const wagmiConfig = createConfig({
   chains: [availSepolia],
@@ -65,9 +61,10 @@ export const wagmiConfig = createConfig({
 })
 
 
+
 export default function App() {
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config = {config} >
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
         <div className="min-h-screen bg-black font-mono md:w-full w-fit">
