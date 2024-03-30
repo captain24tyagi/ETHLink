@@ -16,16 +16,13 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
-
 import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
-<<<<<<< HEAD
 import { walletConnect } from 'wagmi/connectors';
-=======
 import CompNotifications from './components/CompNotifications';
->>>>>>> 0265422baf330956a09fffe5a537bddbbfe93e9e
+
 
 export const availSepolia = {
   id: 202402021700,
