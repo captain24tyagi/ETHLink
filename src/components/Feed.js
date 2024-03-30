@@ -3,7 +3,7 @@ import Header from './Header'
 import Connection from './Connection'
 import Posts from './Posts'
 import Post from './Post'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default function Feed() {
   // const [data, setData] = useState([])
@@ -91,7 +91,7 @@ export default function Feed() {
               );
             })
           } */}
-            </div>
+            
           </div>
          </div>
         </div>
