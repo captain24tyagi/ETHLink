@@ -2,15 +2,19 @@ import React from 'react'
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import GroupsIcon from '@mui/icons-material/Groups';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className='font-mono md:max-w-full max-w-xl text-white bg-gradient-to-r from-[#350f58] via-[#5e3b7f] to-[#cb758c] scroll'>
+    <div className='font-mono min-h-screen md:max-w-full max-w-xl text-white bg-gradient-to-r from-[#350f58] via-[#5e3b7f] to-[#cb758c] scroll'>
       <div className='px-10 mx-10 py-5 items-center font-mono justify-between flex flex-row'>
+        <div className='flex flex-row items-center'>
+        <img className='h-[40px] w-[40px] rounded-full mx-2' src='/images/ethLink.jpg' alt=''/>
         <h1 className='text-3xl'>ETHLink</h1>
+        </div>
         <div className='flex flex-row'>
-          <button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN IN</button>
-          <button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN UP</button>
+          <Link to="/signin"><button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN IN</button></Link>
+          <Link to="/signup"><button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN UP</button></Link>
         </div>
       </div>
 
@@ -22,7 +26,7 @@ export default function Home() {
          <p className='pr-5 md:text-2xl text-md my-5 items-start'>
            At JobLink, we are revolutionizing the way you search for jobs and verify the authenticity of companies using the power of Web3 technology. Say goodbye to traditional job search platforms an hello to a decentralized ecosystem where transparency and trust are paramount
          </p>
-         <img className='w-[300px] h-[300px] p-10 mx-10 rounded-full size-fit' src='/images/metamask-icon.png' alt=''/>
+         <img className='w-[350px] h-[350px] p-10 mx-10 rounded-full size-fit' src='/images/ethlink2.jpg' alt=''/>
         </div>
        </div>
 

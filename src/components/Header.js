@@ -22,7 +22,7 @@ export default function Header() {
            <Link to="/profile"><button><Person2Icon className='mx-5 hover:text-[#F18404]'/></button></Link>
            <Link to=""><button><ChatIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
            <Link to="/jobs"><button><BusinessCenterIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
-           <Link to=""><button><NotificationsIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
+           <Link to="/notifications"><button><NotificationsIcon className='mx-5 hover:text-[#F18404]'/></button></Link>
           </div>
         </div>
   )

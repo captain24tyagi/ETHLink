@@ -6,10 +6,12 @@ import Feed from './components/Feed';
 import Bio from './components/Bio';
 import Signin from './components/Signin';
 import Jobs from './components/Jobs';
+import Notifications from './components/Notifications';
+import Tickets from './components/Tickets';
 
 export default function App() {
   return (
-    <div className="max-h-full bg-black font-mono md:w-full w-fit">
+    <div className="min-h-screen bg-black font-mono md:w-full w-fit">
       <Router>
         <Routes>
           <Route exact path='/signup' element={<Login />} />
@@ -18,6 +20,8 @@ export default function App() {
           <Route exact path='/profile' element={<Bio/>} />
           <Route exact path='/signin' element={<Signin/>} />
           <Route exact path='/jobs' element={<Jobs/>} />
+          <Route exact path='/notifications' element={<Notifications/>} />
+          <Route exact path='/tickets' element={<Tickets/>} />
         </Routes>
       </Router>
     </div>
