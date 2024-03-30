@@ -4,15 +4,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-
 export default function Signin() {
+
   return (
     <div className='min-h-screen'>
      <div className='px-10 mx-10 py-5 items-center font-mono justify-normal flex flex-row'>
       <img className='h-[40px] w-[40px] rounded-full mx-2' src='/images/ethLink.jpg' alt=''/>
       <h1 className='text-3xl mr-10 text-white'>ETHLink</h1>
+      {/* <p>Connected address: {address}</p> */}
      </div>
-
+     
      <div className='items-center flex flex-col'>
       <img className='h-[130px] w-[130px] my-10' src='/images/dp 5.png' alt='' />
       <form className='md:p-10 px-5 py-10 text-center items-center'>

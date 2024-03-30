@@ -10,8 +10,9 @@ import Notifications from './components/Notifications';
 import Tickets from './components/Tickets';
 import Proposals from './components/Proposals';
 import '@rainbow-me/rainbowkit/styles.css';
+import { http, createConfig } from 'wagmi';
 import {
-  getDefaultConfig,
+
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
@@ -20,9 +21,13 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+
+import { walletConnect } from 'wagmi/connectors';
+
 import CompNotifications from './components/CompNotifications';
 
-const availSepolia = {
+
+export const availSepolia = {
   id: 202402021700,
   name: 'OP Avail Sepolia Testnet',
   nativeCurrency: {
@@ -39,19 +44,26 @@ const availSepolia = {
   testnet: true, // Important for testnet identification
 };
 
-const config = getDefaultConfig({
-  appName: 'EthMumbai',
-  projectId: 'b4c074b408e38eb0348c3810737f0ff4',
-  chains: [availSepolia], 
 
-});
 
 const queryClient = new QueryClient();
+
+export const wagmiConfig = createConfig({
+  chains: [availSepolia],
+  connectors: [
+    walletConnect({
+      projectId: 'b4c074b408e38eb0348c3810737f0ff4'
+    }),
+  ],
+  transports: {
+    [availSepolia.id]: http(),
+  },
+})
 
 
 export default function App() {
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
         <div className="min-h-screen bg-black font-mono md:w-full w-fit">
