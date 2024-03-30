@@ -45,10 +45,11 @@ export default function Notifications() {
 
           <div>
             <h2 className='font-bold py-1 text-xl text-white text-left'>
-             Sarthak Tyagi posted:
+            <span className='text-[#F18404]'> Sarthak Tyagi posted: </span>
+             
             </h2>
             <p className='py-1 text-lg text-white text-left'>
-            Hacking at ETH Mumbai and booking Russian, let's connect
+            Hacking at ETH Mumbai , let's connect
             </p>
           </div>
           
@@ -64,10 +65,10 @@ export default function Notifications() {
 
           <div>
             <h2 className='font-bold py-1 text-xl text-white text-left'>
-             Sarthak Tyagi posted:
+            <span className='text-[#F18404]'> Devam Savla posted: </span>
             </h2>
             <p className='py-1 text-lg text-white text-left'>
-            Hacking at ETH Mumbai and booking Russian, let's connect
+            On the way  Mumbai for ETH Mumbai ! Let's Meet
             </p>
           </div>
           
