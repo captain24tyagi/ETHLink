@@ -20,6 +20,7 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+import CompNotifications from './components/CompNotifications';
 
 const availSepolia = {
   id: 202402021700,
@@ -65,6 +66,7 @@ export default function App() {
           <Route exact path='/notifications' element={<Notifications/>} />
           <Route exact path='/company/tickets' element={<Tickets/>} />
           <Route exact path='/company/proposals' element={<Proposals/>} />
+          <Route exact path='/company/compNotifications' element={<CompNotifications/>} />
         </Routes>
       </Router>
     </div>
