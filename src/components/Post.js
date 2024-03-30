@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageIcon from '@mui/icons-material/Image';
 
+
 export default function Post() {
   return (
     <div className='bg-[#4D4C5D] px-1 rounded-xl h-fit col-span-1'>
