@@ -2,6 +2,8 @@ import React from 'react'
 import EmailIcon from '@mui/icons-material/Email';
 // import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 
 export default function Signin() {
   return (
@@ -15,7 +17,9 @@ export default function Signin() {
       <img className='h-[130px] w-[130px] my-10' src='/images/dp 5.png' alt='' />
       <form className='md:p-10 px-5 py-10 text-center items-center'>
         <div className='md:px-20 align-middle mx-10 flex flex-row px-10'>
+          <ConnectButton>
           <button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'><img className='md:w-[50px] md:h-[50px] h-[50px] w-[50px]' src='/images/metamask-icon.png' alt=''/></button>
+          </ConnectButton>
           <button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'><img className='md:w-[50px] md:h-[50px] h-[50px] w-[50px]' src='/images/Logo-google-icon-PNG.png' alt=''/></button>
           {/* <button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'></button> */}
         </div>   

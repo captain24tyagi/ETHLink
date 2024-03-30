@@ -11,11 +11,11 @@ export default function Tickets() {
         <div className='text-center flex flex-col m-5 h-[500px]'>
             <h1 className='font-bold text-xl text-center text-[#F18404] pb-5 mx-5 border-b-2 border-solid border-white'>Account</h1>
             <p className='p-5 mx-5 text-lg text-center'>Proposal</p>
-            <p className='p-5 mx-5 text-lg text-center'>Tickets</p>
+            <p className='p-5 mx-5 text-lg text-center border-b-2 border-solid border-white'>Tickets</p>
             <p className='p-5 mx-5 text-lg text-center'>Settings</p>
-            <p></p>
+            <p className='p-5 mx-5 text-lg text-center'>Notifications</p>
         </div>
-        <div className='items-center m-5 px-5 '>
+        <div className='items-center m-5 px-5'>
           <div className='m-5 flex flex-row items-center px-5'>
             <img className='h-[40px] w-[40px]' src='/images/VARTAA (1).png' alt='' />
             <h2 className='p-5 font-bold text-lg text-center'>Vartalaap Podcast</h2>

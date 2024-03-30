@@ -8,10 +8,52 @@ import Signin from './components/Signin';
 import Jobs from './components/Jobs';
 import Notifications from './components/Notifications';
 import Tickets from './components/Tickets';
+import Proposals from './components/Proposals';
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultConfig,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+import { WagmiProvider } from 'wagmi';
+
+import {
+  QueryClientProvider,
+  QueryClient,
+} from "@tanstack/react-query";
+
+const availSepolia = {
+  id: 202402021700,
+  name: 'OP Avail Sepolia Testnet',
+  nativeCurrency: {
+    name: 'ETH', // Assuming native token is ETH
+    symbol: 'ETH',
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: { http: 'https://op-avail-sepolia.alt.technology', ws: 'wss://op-avail-sepolia.alt.technology/ws' }
+  },
+  blockExplorers: {
+    default: { name: 'OP Avail Sepolia Explorer', url: 'https://op-avail-sepolia-explorer.alt.technology' },
+  },
+  testnet: true, // Important for testnet identification
+};
+
+const config = getDefaultConfig({
+  appName: 'EthMumbai',
+  projectId: 'b4c074b408e38eb0348c3810737f0ff4',
+  chains: [availSepolia], 
+
+});
+
+const queryClient = new QueryClient();
+
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black font-mono md:w-full w-fit">
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+        <div className="min-h-screen bg-black font-mono md:w-full w-fit">
       <Router>
         <Routes>
           <Route exact path='/signup' element={<Login />} />
@@ -21,10 +63,15 @@ export default function App() {
           <Route exact path='/signin' element={<Signin/>} />
           <Route exact path='/jobs' element={<Jobs/>} />
           <Route exact path='/notifications' element={<Notifications/>} />
-          <Route exact path='/tickets' element={<Tickets/>} />
+          <Route exact path='/company/tickets' element={<Tickets/>} />
+          <Route exact path='/company/proposals' element={<Proposals/>} />
         </Routes>
       </Router>
     </div>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
+
   );
 }
 
