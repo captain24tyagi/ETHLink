@@ -13,7 +13,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { http, createConfig } from '@wagmi/core';
 import { sepolia } from '@wagmi/core/chains';
 import {
-  getDefaultConfig,
+
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
@@ -48,6 +48,20 @@ export const config = getDefaultConfig({
   appName: 'EthMumbai',
   projectId: 'b4c074b408e38eb0348c3810737f0ff4',
   chains: [sepolia],
+
+
+const queryClient = new QueryClient();
+
+export const wagmiConfig = createConfig({
+  chains: [availSepolia],
+  connectors: [
+    walletConnect({
+      projectId: 'b4c074b408e38eb0348c3810737f0ff4'
+    }),
+  ],
+  transports: {
+    [availSepolia.id]: http(),
+  },
 })
 
 
