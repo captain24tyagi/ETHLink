@@ -13,9 +13,13 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import Experience from './Experience'
 import Socials from './Socials'
+import { useWriteContract, useAccount } from 'wagmi';
+import { CONTRACT_ADDRESS, TICKET_ABI } from '../contracts/verification'
+import { config } from '../App'
 
 export default function Bio() {
   // Education
+  const account = useAccount();
   const [open, setOpen] = useState(false)
   const [educationDetails, setEducationDetails] = useState([])
   const [formData, setFormData] = useState({
@@ -27,6 +31,9 @@ export default function Bio() {
     endDate: '',
     proof: null,
   })
+
+  const { writeContract, error, status} = useWriteContract();
+
   const handleOpen = () => {
     setOpen(true)
   }
@@ -74,6 +81,27 @@ export default function Bio() {
     updatedDetails.splice(index, 1)
     setEducationDetails(updatedDetails)
   }
+
+  const handleContract = async () => {
+    if(error) {
+      alert(error.shortMessage)
+    }
+    
+    writeContract({
+      abi: TICKET_ABI,
+      address: CONTRACT_ADDRESS,
+      functionName: "createTicket",
+      args: [
+        '0x592fa743889fc12d14e24548b6a4471714f487080ebf56a5ec853646105ab4cf',
+        'RachitDhaka',
+        'CoFounder',
+        5,
+        '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
+      ],
+    })
+  }
+  
+  
 
   useEffect(() => {
     // Reset form state when dialog is closed
@@ -382,8 +410,9 @@ export default function Bio() {
                 <Button onClick={handleClose} color='primary'>
                   Cancel
                 </Button>
+      
                 <Button
-                  onClick={handleSubmit}
+                  onClick={() => handleContract()}
                   color='primary'
                   variant='contained'
                 >

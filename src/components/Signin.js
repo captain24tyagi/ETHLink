@@ -11,7 +11,6 @@ export default function Signin() {
      <div className='px-10 mx-10 py-5 items-center font-mono justify-normal flex flex-row'>
       <img className='h-[40px] w-[40px] rounded-full mx-2' src='/images/ethLink.jpg' alt=''/>
       <h1 className='text-3xl mr-10 text-white'>ETHLink</h1>
-      {/* <p>Connected address: {address}</p> */}
      </div>
      
      <div className='items-center flex flex-col'>

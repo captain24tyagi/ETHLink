@@ -6,16 +6,14 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Link } from 'react-router-dom';
-import { useAccount } from 'wagmi';
-import { wagmiConfig } from '../App';
+import { useAccount } from 'wagmi'
+import { config } from '../App';
 
 
 export default function Header() {
-  const account = useAccount({
-    wagmiConfig,
-  });
 
-  const { address } = account;
+  const account = useAccount();
+  const address = account.address;
 
   return (
         <div className='px-10 mx-10 py-5 items-center font-mono md:justify-between justify-normal flex flex-row text-white border-b-2 border-solid border-white'>
