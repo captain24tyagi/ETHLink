@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Ticket from './Ticket'
+import { Link } from 'react-router-dom';
 
 export default function Tickets() {
   return (
@@ -10,8 +11,8 @@ export default function Tickets() {
       <div className='col-span-1 bg-[#4C4D5D] border-solid border-r-2 border-white '>
         <div className='text-center flex flex-col m-5 h-[500px]'>
             <h1 className='font-bold text-xl text-center text-[#F18404] pb-5 mx-5 border-b-2 border-solid border-white'>Account</h1>
-            <p className='p-5 mx-5 text-lg text-center'>Proposal</p>
-            <p className='p-5 mx-5 text-lg text-center border-b-2 border-solid border-white'>Tickets</p>
+            <Link to="/company/proposals"><p className='p-5 mx-5 text-lg text-center'>Proposal</p></Link>
+            <Link to="/company/tickets"><p className='p-5 mx-5 text-lg text-center border-b-2 border-solid border-white'>Tickets</p></Link>
             <p className='p-5 mx-5 text-lg text-center'>Settings</p>
             <p className='p-5 mx-5 text-lg text-center'>Notifications</p>
         </div>

@@ -11,35 +11,35 @@ export default function Feed() {
   const [data, setData] = useState([]);
 
   const getNews = () => {
-    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=a85975e3c8e3499daa0ded6bf6050afe")
+    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=cc3495be8b1d46579e92ca469bab1c3a")
     .then((response) => {
       setData(response.data.articles);
     })
   }
 
   const getNews1 = () => {
-    axios.get("https://newsapi.org/v2/everything?q=ai&apiKey=a85975e3c8e3499daa0ded6bf6050afe")
+    axios.get("https://newsapi.org/v2/everything?q=ai&apiKey=cc3495be8b1d46579e92ca469bab1c3a")
     .then((response) => {
       setData(response.data.articles);
     })
   }
 
   const getNews2 = () => {
-    axios.get("https://newsapi.org/v2/everything?q=cyber&apiKey=a85975e3c8e3499daa0ded6bf6050afe")
+    axios.get("https://newsapi.org/v2/everything?q=cyber&apiKey=cc3495be8b1d46579e92ca469bab1c3a")
     .then((response) => {
       setData(response.data.articles);
     })
   }
 
   const getNews3 = () => {
-    axios.get("https://newsapi.org/v2/everything?q=cloud&apiKey=a85975e3c8e3499daa0ded6bf6050afe")
+    axios.get("https://newsapi.org/v2/everything?q=cloud&apiKey=cc3495be8b1d46579e92ca469bab1c3a")
     .then((response) => {
       setData(response.data.articles);
     })
   }
 
   const getNews4 = () => {
-    axios.get("https://newsapi.org/v2/everything?q=iot&apiKey=a85975e3c8e3499daa0ded6bf6050afe")
+    axios.get("https://newsapi.org/v2/everything?q=iot&apiKey=cc3495be8b1d46579e92ca469bab1c3a")
     .then((response) => {
       setData(response.data.articles);
     })
@@ -86,7 +86,7 @@ export default function Feed() {
            <button onClick={getNews4} className='px-2 py-1 bg-black hover:bg-[#F18404] rounded-2xl'>IOT</button>
           </div>
           <div className=''>
-          {
+          {/* {
             data.map((value) => {
               return(
                 <div className='border-solid border-b-2 border-white m-2 p-2'>
@@ -95,7 +95,7 @@ export default function Feed() {
                 </div>
               );
             })
-          }
+          } */}
             
           </div>
          </div>
