@@ -12,10 +12,8 @@ export default function Tickets() {
             <h1 className='font-bold text-xl text-center text-[#F18404] pb-5 mx-5 border-b-2 border-solid border-white'>
               Account
             </h1>
-            <p className='p-5 mx-5 text-lg text-center'>Proposal</p>
-            <p className='p-5 mx-5 text-lg text-center border-b-2 border-solid border-white'>
-              Tickets
-            </p>
+            <Link to="/company/proposals"><p className='p-5 mx-5 text-lg text-center'>Proposal</p></Link>
+            <Link to="/company/tickets"><p className='p-5 mx-5 text-lg text-center border-b-2 border-solid border-white'>Tickets</p></Link>
             <p className='p-5 mx-5 text-lg text-center'>Settings</p>
             <Link to='/company/compNotifications'>
               <p className='p-5 mx-5 text-lg text-center'>Notifications</p>
@@ -44,46 +42,12 @@ export default function Tickets() {
           <div className='grid grid-cols-3 gap-4 p-5 m-5'>
             <Ticket
               name='Rachit Dhaka'
-              id='P95380A'
-              role='Co-Founder'
+              id='000001'
+              role='Content-writer'
               company='Vartalaap Podcast'
               location='Chennai'
             />
-            <Ticket
-              name='Rachit Dhaka'
-              id='P95380A'
-              role='Co-Founder'
-              company='Vartalaap Podcast'
-              location='Chennai'
-            />
-            <Ticket
-              name='Rachit Dhaka'
-              id='P95380A'
-              role='Co-Founder'
-              company='Vartalaap Podcast'
-              location='Chennai'
-            />
-            <Ticket
-              name='Rachit Dhaka'
-              id='P95380A'
-              role='Co-Founder'
-              company='Vartalaap Podcast'
-              location='Chennai'
-            />
-            <Ticket
-              name='Rachit Dhaka'
-              id='P95380A'
-              role='Co-Founder'
-              company='Vartalaap Podcast'
-              location='Chennai'
-            />
-            <Ticket
-              name='Raman Gupta'
-              id='P95340A'
-              role='SDE'
-              company='Google INC.'
-              location='Bangalore'
-            />
+            
           </div>
         </div>
       </div>

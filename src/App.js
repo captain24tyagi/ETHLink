@@ -20,6 +20,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import CompNotifications from './components/CompNotifications';
+import Complogin from './components/Complogin';
 
 
 export const availSepolia = {
@@ -67,7 +68,7 @@ export default function App() {
     <WagmiProvider config = {config} >
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
-        <div className="min-h-screen bg-black font-mono md:w-full w-fit">
+        <div className="min-h-screen bg-black font-mono md:w-full w-fit ">
       <Router>
         <Routes>
           <Route exact path='/signup' element={<Login />} />
@@ -80,6 +81,7 @@ export default function App() {
           <Route exact path='/company/tickets' element={<Tickets/>} />
           <Route exact path='/company/proposals' element={<Proposals/>} />
           <Route exact path='/company/compNotifications' element={<CompNotifications/>} />
+          <Route exact path='/company/login' element={<Complogin/>} />
         </Routes>
       </Router>
     </div>
