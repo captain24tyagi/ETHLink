@@ -67,7 +67,7 @@ export default function Signin() {
                 />
               </button>
             </ConnectButton>
-            <Link to='/feed'><button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'>LFG</button></Link>
+            <Link to='/feed'><button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'>LFG🚀</button></Link>
           </div>
           <div className='mb-5'>
             <h2 className='font-bold text-center m-10 p-5 text-white'>OR</h2>

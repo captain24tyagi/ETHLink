@@ -4,11 +4,30 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import { Link } from 'react-router-dom';
 import { useTypewriter, Cursor } from "react-simple-typewriter"
+import { motion } from 'framer-motion';
+
 
 export default function Home() {
+
+  const [text, setText] = useTypewriter({
+    words: ['Discover Authentic Opportunities with ETHLink: The Decentralized Job Network.',
+      'Decentralize Your Job Search with ETHLink: Trust, Verified',
+      'Join ETHLink: Where Transparency Meets Opportunity'
+    ],
+    loop: true,
+    delaySpeed: 1000,
+})
   return (
     <div className='font-mono min-h-screen md:max-w-full max-w-xl text-white bg-gradient-to-r from-[#350f58] via-[#5e3b7f] to-[#cb758c] scroll'>
-      <div className='px-10 mx-10 py-5 items-center font-mono justify-between flex flex-row'>
+      <motion.div 
+       initial={{
+            opacity: 0,
+            x: -100
+          }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ opacity: 1, x: 1 }}
+          viewport={{ once: true }}
+          className='px-10 mx-10 py-5 items-center font-mono justify-between flex flex-row'>
         <div className='flex flex-row items-center'>
         <img className='h-[40px] w-[40px] rounded-full mx-2' src='/images/ethLink.jpg' alt=''/>
         <h1 className='text-3xl'>ETHLink</h1>
@@ -17,12 +36,13 @@ export default function Home() {
           <Link to="/signin"><button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN IN</button></Link>
           <Link to="/signup"><button className='md:px-10 md:py-3 px-5 py-1 rounded-xl bg-[#595B63] mx-5'>SIGN UP</button></Link>
         </div>
-      </div>
+      </motion.div>
 
        <div className='p-5 mx-10 my-5 rounded-lg bg-[#181616] md:w-fit w-[500px]'>
-        <h1 className='m-5 md:text-4xl text-3xl font-bold '>WELCOME TO 
-         <span className='text-[#F18404]'> ETHLink: </span>
-        YOUR GATEWAY TO DECENTRALIZED DEVELOPMENT</h1>
+        <h1 className='m-5 md:text-4xl text-3xl text-[#F18404] font-bold '>
+         <span>{text}</span>
+         <Cursor cursorColor="#FB923C"/>
+        </h1>
         <div className='m-5 py-5 flex md:flex-row flex-col-reverse'>
          <p className='pr-5 md:text-lg text-md my-5 items-start'>
            At ETHLink, we are revolutionizing the way you search for jobs and verify the authenticity of companies using the power of Web3 technology. Through blockchain technology, we ensure that every company and individual on our platform undergoes thorough verification, providing users with peace of mind and confidence in their job search or recruitment process.

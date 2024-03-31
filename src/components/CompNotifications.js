@@ -3,6 +3,7 @@ import Header from './Header'
 // import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt'
 // import LinkIcon from '@mui/icons-material/Link'
 import CheckCircleOutlineTwoToneIcon from '@mui/icons-material/CheckCircleOutlineTwoTone'
+
 export default function CompNotifications() {
   return (
     <div className='min-h-screen text-white'>

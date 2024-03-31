@@ -21,7 +21,7 @@ export default function Posts() {
         </div>
 
         <div className='border-solid border-b-2 border-white m-2'>
-          <p className='py-1 text-lg items-start'>
+          <p className='py-1 text-sm items-start'>
             Just starting with this platform , feels really amazing about How
             web3 has been recognized every where and people supporting it . Rate
             my design in the next post 🙌
@@ -48,6 +48,7 @@ export default function Posts() {
           />
         </div>
       </div>
-    </div>
+
+      </div>
   )
 }

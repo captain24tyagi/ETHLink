@@ -33,7 +33,7 @@ export default function Complogin() {
           alt=''
         />
         <form className='md:p-10 px-5 py-10 text-center items-center'>
-          <div className='md:px-20 align-middle mx-10 flex justify-center px-10 mb-5'>
+          <div className='md:px-20 align-middle mx-10 flex flex-row justify-center px-10 mb-5'>
             <ConnectButton>
               <button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'>
                 <img
@@ -43,6 +43,7 @@ export default function Complogin() {
                 />
               </button>
             </ConnectButton>
+            <Link to='/company/compNotifications'><button className='px-10 py-3 rounded-xl bg-[#595B63] mx-5'>LFG🚀</button></Link>
           </div>
           <div className='mb-5'>
             <h2 className='font-bold text-center m-10 p-5 text-white'>OR</h2>
