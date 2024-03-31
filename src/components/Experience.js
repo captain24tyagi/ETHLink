@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
@@ -48,6 +48,12 @@ export default function Experience() {
     handleClose()
   }
 
+  const handleClearLocalStorage = () => {
+    localStorage.clear();
+    // Optionally, perform any additional actions after clearing local storage
+  };
+  
+
   const handleContract = async () => {
     const { designation, companyName, startDate, endDate, location } = experienceFormData;
 
@@ -64,6 +70,7 @@ export default function Experience() {
         setTimeout(() => {
           const newDetails = [...experienceDetails, experienceFormData];
           setExperienceDetails(newDetails);
+          localStorage.setItem('experienceDetails', JSON.stringify(newDetails));
         }, 20000);
   
         // Reset form data
@@ -100,7 +107,14 @@ export default function Experience() {
     } else {
       alert('All fields are required!');
     }
-  }
+  };
+
+  useEffect(() => {
+    const storedExperienceDetails = localStorage.getItem('experienceDetails');
+    if (storedExperienceDetails) {
+      setExperienceDetails(JSON.parse(storedExperienceDetails));
+    }
+  }, []);
 
   const handleDelete = (index) => {
     const updatedExperienceDetails = [...experienceDetails]
@@ -166,7 +180,7 @@ export default function Experience() {
                   onClick={() => handleDelete(index)}
                   style={{ color: '#FFFFFF' }}
                 >
-                  <DeleteIcon className='m-5' />
+                  <DeleteIcon onClick={handleClearLocalStorage} className='m-5' />
                 </IconButton>
               </div>
             </div>
