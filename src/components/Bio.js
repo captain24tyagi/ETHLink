@@ -13,13 +13,13 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import Experience from './Experience'
 import Socials from './Socials'
-import { useWriteContract, useAccount } from 'wagmi';
+import { useWriteContract, useAccount } from 'wagmi'
 import { CONTRACT_ADDRESS, TICKET_ABI } from '../contracts/verification'
 import { config } from '../App'
 
 export default function Bio() {
   // Education
-  const account = useAccount();
+  const account = useAccount()
   const [open, setOpen] = useState(false)
   const [educationDetails, setEducationDetails] = useState([])
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ export default function Bio() {
     proof: null,
   })
 
-  const { writeContract, error, status} = useWriteContract();
+  const { writeContract, error, status } = useWriteContract()
 
   const handleOpen = () => {
     setOpen(true)
@@ -83,40 +83,60 @@ export default function Bio() {
   }
 
   const handleContract = async () => {
-    if(error) {
-      alert(error.shortMessage)
-    }
-    
-    writeContract({
-      abi: TICKET_ABI,
-      address: CONTRACT_ADDRESS,
-      functionName: "createTicket",
-      args: [
-        '0x592fa743889fc12d14e24548b6a4471714f487080ebf56a5ec853646105ab4cf',
-        'RachitDhaka',
-        'ContentWriter',
-        5,
-        '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
-      ],
-    })
-  }
-  
-  
+    const { institution, degree, branch, city, startDate, endDate, proof } =
+      formData
 
-  useEffect(() => {
-    // Reset form state when dialog is closed
-    if (!open) {
-      setFormData({
-        institution: '',
-        degree: '',
-        branch: '',
-        city: '',
-        startDate: '',
-        endDate: '',
-        proof: null,
-      })
+    if (
+      institution.trim() !== '' &&
+      degree.trim() !== '' &&
+      branch.trim() !== '' &&
+      city.trim() !== '' &&
+      startDate.trim() !== '' &&
+      endDate.trim() !== '' &&
+      proof
+    ) {
+      // Assuming you have error and writeContract functions defined elsewhere
+      try {
+        // Update education details after 15 seconds
+        setTimeout(() => {
+          const newDetails = [...educationDetails, formData]
+          setEducationDetails(newDetails)
+        }, 20000)
+
+        // Reset form data
+        setFormData({
+          institution: '',
+          degree: '',
+          branch: '',
+          city: '',
+          startDate: '',
+          endDate: '',
+          proof: null,
+        })
+
+        // Close the dialog after successful submission
+        handleClose()
+
+        // Add contract handling logic here
+        await writeContract({
+          abi: TICKET_ABI,
+          address: CONTRACT_ADDRESS,
+          functionName: 'createTicket',
+          args: [
+            '0x592fa743889fc12d14e24548b6a4471714f487080ebf56a5ec853646105ab4cf',
+            'RachitDhaka',
+            'ContentWriter',
+            5,
+            '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
+          ],
+        })
+      } catch (error) {
+        alert(error.shortMessage)
+      }
+    } else {
+      alert('All fields are required!')
     }
-  }, [open])
+  }
 
   // BIO
   const [bioOpen, setBioOpen] = useState(false)
@@ -410,7 +430,7 @@ export default function Bio() {
                 <Button onClick={handleClose} color='primary'>
                   Cancel
                 </Button>
-      
+
                 <Button
                   onClick={() => handleContract()}
                   color='primary'

@@ -20,7 +20,7 @@ export default function Signin() {
           <h1 className='text-3xl mr-10 text-white'>ETHLink</h1>
         </div>
         <h1 className='font-semibold text-white'>
-          Empower yourself with us, join a community that fuels growth
+          Welcome to User Login Page
         </h1>
         <Link to='/company/login'>
           <button className='bg-[#F18404] px-10 py-2 rounded-lg'>

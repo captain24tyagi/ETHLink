@@ -10,8 +10,8 @@ import AddIcon from '@mui/icons-material/Add'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import 'react-datepicker/dist/react-datepicker.css'
-import PendingActionsTwoToneIcon from '@mui/icons-material/PendingActionsTwoTone'
-
+import VerifiedIcon from '@mui/icons-material/Verified';import { useWriteContract, useAccount } from 'wagmi';
+import { CONTRACT_ADDRESS, TICKET_ABI } from '../contracts/verification'
 export default function Experience() {
   const [experienceDetails, setExperienceDetails] = useState([])
   const [experienceFormData, setExperienceFormData] = useState({
@@ -29,6 +29,7 @@ export default function Experience() {
   const handleClose = () => {
     setOpen(false)
   }
+  const { writeContract, error, status} = useWriteContract();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -46,6 +47,61 @@ export default function Experience() {
     })
     handleClose()
   }
+
+  const handleContract = async () => {
+    const { designation, companyName, startDate, endDate, location } = experienceFormData;
+
+    if (
+      designation.trim() !== '' &&
+      companyName.trim() !== '' &&
+      startDate.trim() !== '' &&
+      endDate.trim() !== '' &&
+      location.trim() !== ''
+    ) {
+      // Assuming you have error and writeContract functions defined elsewhere
+      try {
+        // Update experience details after 20 seconds
+        setTimeout(() => {
+          const newDetails = [...experienceDetails, experienceFormData];
+          setExperienceDetails(newDetails);
+        }, 20000);
+  
+        // Reset form data
+        setExperienceFormData({
+          image: '',
+          designation: '',
+          companyName: '',
+          startDate: '',
+          endDate: '',
+          location: '',
+        });
+  
+  
+        // Close the dialog after successful submission
+        handleClose();
+  
+        // Add contract handling logic here
+        await writeContract({
+          abi: TICKET_ABI,
+          address: CONTRACT_ADDRESS,
+          functionName: "createTicket",
+          args: [
+            '0x592fa743889fc12d14e24548b6a4471714f487080ebf56a5ec853646105ab4cf',
+            'RachitDhaka',
+            'ContentWriter',
+            5,
+            '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
+          ],
+        });
+  
+      } catch (error) {
+        alert(error.shortMessage);
+      }
+    } else {
+      alert('All fields are required!');
+    }
+  }
+
   const handleDelete = (index) => {
     const updatedExperienceDetails = [...experienceDetails]
     updatedExperienceDetails.splice(index, 1)
@@ -87,7 +143,7 @@ export default function Experience() {
               <div className='w-[1000px]'>
                 <h1 className='font-bold text-2xl'>
                   {experience.designation}
-                  <PendingActionsTwoToneIcon className='mx-2 mb-1 text-red-500' />
+                  <VerifiedIcon className='mx-2 mb-1 text-green-500' />
                 </h1>
                 <p className='text-xl'>{experience.companyName}</p>
                 <div className='py-5'>
@@ -99,7 +155,7 @@ export default function Experience() {
               <div className='items-center'>
                 <img
                   className='h-[50px] w-[50px] mx-10 my-10'
-                  src='/images/clock.png'
+                  src='/images/QR 1.png'
                   alt=''
                 />
               </div>
@@ -197,7 +253,7 @@ export default function Experience() {
           <Button onClick={handleClose} color='primary'>
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color='primary' variant='contained'>
+          <Button onClick={handleContract} color='primary' variant='contained'>
             Submit
           </Button>
         </DialogActions>

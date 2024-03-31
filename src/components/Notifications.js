@@ -63,12 +63,12 @@ export default function Notifications() {
          
          <div className='flex flex-row space-x-4'>
          <div className='w-[40px] h-[40px] rounded-full mx-5 my-3 '>
-           <img className='w-full h-full rounded-full size-fit' src='/images/Sarthak 3.png' alt=''/>
+           <img className='w-full h-full rounded-full size-fit' src='/images/Aniket.jpg' alt=''/>
           </div>
 
           <div>
             <h2 className='font-bold py-1 text-xl text-white text-left'>
-            <span className='text-[#F18404]'> Devam Savla posted: </span>
+            <span className='text-[#F18404]'> Aniket Kumar posted: </span>
             </h2>
             <p className='py-1 text-lg text-white text-left'>
             On the way  Mumbai for ETH Mumbai ! Let's Meet
