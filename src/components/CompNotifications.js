@@ -40,7 +40,27 @@ export default function CompNotifications() {
           <div className='text-left border-solid border-b-2 border-white font-bold text-xl'>
             <h1 className='p-5'>Company Notifications</h1>
           </div>
+          <div className='flex flex-row space-x-5 justify-between py-3 w-full my-2 rounded-lg bg-black'>
+            <div className='flex flex-row space-x-4'>
+              <div className='w-[40px] h-[40px] rounded-full mx-5 my-3 '>
+                <img
+                  className='w-full h-full rounded-full size-fit'
+                  src='/images/dp 5.png'
+                  alt=''
+                />
+              </div>
 
+              <div>
+                <h2 className='font-bold py-1 text-xl text-white text-left'>
+                  <span className='text-[#F18404]'> New Ticket Raised: </span>
+                </h2>
+                <p className='py-1 text-lg text-white text-left'>
+                  Rachit Dhaka has raised a ticket for their certificate
+                  verification.
+                </p>
+              </div>
+            </div>
+          </div>
           <div className='flex flex-row space-x-5 justify-between py-3 w-full my-2 rounded-lg bg-black'>
             <div className='flex flex-row space-x-4'>
               <div className='w-[40px] h-[40px] rounded-full mx-5 my-3 '>
@@ -82,29 +102,6 @@ export default function CompNotifications() {
               </div>
             </div>
           </div>
-
-          <div className='flex flex-row space-x-5 justify-between py-3 w-full my-2 rounded-lg bg-black'>
-            <div className='flex flex-row space-x-4'>
-              <div className='w-[40px] h-[40px] rounded-full mx-5 my-3 '>
-                <img
-                  className='w-full h-full rounded-full size-fit'
-                  src='/images/dp 5.png'
-                  alt=''
-                />
-              </div>
-
-              <div>
-                <h2 className='font-bold py-1 text-xl text-white text-left'>
-                  <span className='text-[#F18404]'> New Ticket Raised: </span>
-                </h2>
-                <p className='py-1 text-lg text-white text-left'>
-                  Rahit Dhaka has raised a ticket for their certificate verification.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          
         </div>
       </div>
     </div>
