@@ -99,8 +99,8 @@ export default function Bio() {
         '0x961C70EbA755ebC9753F6A50693A888BF07bBb93',
       ],
     })
+
   }
-  
   
 
   useEffect(() => {
@@ -425,7 +425,7 @@ export default function Bio() {
             <h2 className='text-2xl text-[#F18404]'>POSITION</h2>
             <div className='m-5 flex flex-row'>
               <div className='flex flex-col w-[600px]'>
-                <h3 className='text-xl'>Co-Founder</h3>
+                <h3 className='text-xl'>Content-Writer</h3>
                 <h4 className='text-md'>Vartalaap Podcast</h4>
                 <h5 className='text-md'>Jan'2024-current</h5>
               </div>

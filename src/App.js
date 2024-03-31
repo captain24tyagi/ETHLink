@@ -32,12 +32,12 @@ export const availSepolia = {
     decimals: 18,
   },
   rpcUrls: {
-    default: { http: 'https://op-avail-sepolia.alt.technology', ws: 'wss://op-avail-sepolia.alt.technology/ws' }
+    default: { http: 'https://op-avail-sepolia.alt.technology' }
   },
   blockExplorers: {
     default: { name: 'OP Avail Sepolia Explorer', url: 'https://op-avail-sepolia-explorer.alt.technology' },
   },
-  testnet: true, // Important for testnet identification
+ // Important for testnet identification
 };
 
 const queryClient = new QueryClient();
@@ -46,7 +46,6 @@ export const config = getDefaultConfig({
   appName: 'EthMumbai',
   projectId: 'b4c074b408e38eb0348c3810737f0ff4',
   chains: [sepolia],
-
 })
 
 export const wagmiConfig = createConfig({

@@ -3,6 +3,7 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import GroupsIcon from '@mui/icons-material/Groups';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import { Link } from 'react-router-dom';
+import { useTypewriter, Cursor } from "react-simple-typewriter"
 
 export default function Home() {
   return (
